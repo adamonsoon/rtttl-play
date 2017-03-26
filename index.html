@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Play RTTTL Online</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Play RTTTL Online</h1>
+    </div>
+
+    <div class="well well-lg">
+      <textarea placeholder="Paste your RTTTL here and press play" name="rtttl" class="rtttl" id="" cols="30" rows="10"></textarea>
+    </div>
+    <button type="button" class="btn btn-default btn-primary" aria-label="Play" onClick="rtttlPlay.play(document.querySelector('.rtttl').value)">
+      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+      <span>Play</span>
+    </button>
+    <button type="button" class="btn btn-default" aria-label="Play" onClick="rtttlPlay.stop()">
+      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+      <span>Stop</span>
+    </button>
+  </div>
+
+  <script src="dist/index.umd.js"></script>
+</body>
+</html>
