@@ -230,13 +230,13 @@ function getData(melody, defaults) {
 
   return NOTES.map(function (note) {
 
-    var NOTE_REGEX = /(1|2|4|8|16|32|64)?((?:[a-g]|h|p)#?){1}(4|5|6|7)?(\.?)/;
+    var NOTE_REGEX = /(1|2|4|8|16|32|64)?((?:[a-g]|h|p)#?){1}(\.?)(4|5|6|7)?/;
     var NOTE_PARTS = note.match(NOTE_REGEX);
 
     var NOTE_DURATION = NOTE_PARTS[1] || parseInt(defaults.duration);
     var NOTE = NOTE_PARTS[2] === 'h' ? 'b' : NOTE_PARTS[2];
-    var NOTE_OCTAVE = NOTE_PARTS[3] || parseInt(defaults.octave);
-    var NOTE_DOTTED = NOTE_PARTS[4] === '.';
+    var NOTE_DOTTED = NOTE_PARTS[3] === '.';
+    var NOTE_OCTAVE = NOTE_PARTS[4] || parseInt(defaults.octave);
 
     return {
       note: NOTE,
